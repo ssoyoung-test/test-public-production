@@ -1,0 +1,25 @@
+name: Production Release
+
+on:
+  push:
+    branches:
+      - 'release/**'
+  workflow_dispatch:
+
+env:
+  DOCKER_BUILDKIT: '1'
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  publish_release:
+    name: Publish Release
+    runs-on: ubuntu-24.04
+    environment:
+      name: production
+    steps:
+      - name: Say Hello
+        run: |
+          echo "Hello, world!"
