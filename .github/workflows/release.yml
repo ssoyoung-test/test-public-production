@@ -14,12 +14,19 @@ permissions:
   packages: write
 
 jobs:
+  echo_start:
+    name: Echo Start
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Say Hello
+        run: |
+          echo "Hello, shall we start?"
   publish_release:
     name: Publish Release
     runs-on: ubuntu-24.04
     environment:
       name: production
     steps:
-      - name: Say Hello
+      - name: Start release
         run: |
-          echo "Hello, world!"
+          echo "Let's start the release!"
